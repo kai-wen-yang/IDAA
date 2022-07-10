@@ -5,6 +5,6 @@ Official implementation:
 
 
 <div align="center">
-  <img src="pipeline_new.pdf" width="1000px" />
+  <img src="IDAA.png" width="1000px" />
   <p>IDAA</p>
 </div>
