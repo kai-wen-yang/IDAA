@@ -7,14 +7,10 @@ from model import load_model, save_model
 import sys
 import wandb
 from modules import LogisticRegression
-from load_imagenet import imagenet, load_data, MiniImageNet
 sys.path.append('.')
 sys.path.append('..')
 from set import *
 from utils import *
-import pdb
-from robustness.tools.helpers import get_label_mapping
-from robustness.tools import folder
 
 
 parser = argparse.ArgumentParser(description='PyTorch Seen Testing Category Training')
@@ -36,8 +32,8 @@ parser.add_argument('--model_path', default='checkpoint/', type=str,
 parser.add_argument('--model_dir', default='checkpoint/', type=str, 
                     help='model save path')
 parser.add_argument('--lr', default=3e-4, type=float, help='learning rate')
-parser.add_argument('--dataset', default='CIFAR10',  
-                    help='[CIFAR10, CIFAR100, tinyImagenet]')
+parser.add_argument('--dataset', default='cifar10',
+                    help='[cifar10, cifar100]')
 parser.add_argument('--gpu', default='0', type=str,
                       help='gpu device ids for CUDA_VISIBLE_DEVICES')
 parser.add_argument('--trial', type=int, help='trial')
@@ -156,42 +152,20 @@ def main():
         ])
         data = 'non_imagenet'
 
-    if args.dataset == "CIFAR10" :
+    if args.dataset == "cifar10" :
         train_dataset = torchvision.datasets.CIFAR10(
             root, train=True, download=True, transform=transform
         )
         test_dataset = torchvision.datasets.CIFAR10(
             root, train=False, download=True, transform=transform
         )
-    elif args.dataset == "CIFAR100":
+    elif args.dataset == "cifar100":
         train_dataset = torchvision.datasets.CIFAR100(
             root, train=True, download=True, transform=transform
         )
         test_dataset = torchvision.datasets.CIFAR100(
             root, train=False, download=True, transform=transform
         )
-    elif args.dataset == "tinyImagenet":
-        root = '../../data/tiny_imagenet.pickle'
-        train_dataset, test_dataset = load_data(root)
-        train_dataset = imagenet(train_dataset, transform=transform)
-        test_dataset = imagenet(test_dataset, transform=transform)
-    elif args.dataset == "imagenet100":
-        root = '/gpub/imagenet_raw'
-        custom_grouping = [[label] for label in range(0, 1000, 10)]
-        ds_name = 'custom_imagenet'
-        data = 'imagenet'
-        label_mapping = get_label_mapping(ds_name, custom_grouping)
-        train_path = os.path.join(root, 'train')
-        test_path = os.path.join(root, 'val')
-        train_dataset = folder.ImageFolder(root=train_path, transform=transform,
-                                       label_mapping=label_mapping)
-        test_dataset = folder.ImageFolder(root=test_path, transform=transform,
-                                      label_mapping=label_mapping)
-    elif args.dataset == 'miniImagenet':
-        root = '../../data'
-        data = 'imagenet'
-        train_dataset = MiniImageNet(root=root, transform=transform, train=True)
-        test_dataset = MiniImageNet(root=root, transform=transform, train=False)
     else:
         raise NotImplementedError
 
@@ -235,12 +209,8 @@ def main():
     simclr_model.eval()
 
     ## Logistic Regression
-    if args.dataset == "CIFAR100" or args.dataset == "miniImagenet" :
+    if args.dataset == "cifar100":
         n_classes = 100 # stl-10
-    elif args.dataset == 'tinyImagenet':
-        n_classes = 200
-    elif args.dataset == 'imagenet100':
-        n_classes = 100
     else:
         n_classes = 10
 
