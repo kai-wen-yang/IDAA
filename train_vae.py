@@ -19,8 +19,6 @@ import pdb
 import sys
 import torch.autograd as autograd
 import torchvision.models as models
-from robustness.tools.helpers import get_label_mapping
-from robustness.tools import folder
 sys.path.append('.')
 
 from vae import *
