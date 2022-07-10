@@ -5,6 +5,6 @@ Official implementation:
 
 
 <div align="center">
-  <img src="IDAA.png" width="1000px" />
-  <p>IDAA</p>
+  <img src="IDAA.png" width="750px" />
+  <p>Architecture and pipeline of Identity-Disentangled Adversarial Augmentation (IDAA)</p>
 </div>
