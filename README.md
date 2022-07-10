@@ -6,5 +6,5 @@ Official implementation:
 
 <div align="center">
   <img src="pipeline_new.pdf" width="1000px" />
-  <p>CD-VAE</p>
+  <p>IDAA</p>
 </div>
