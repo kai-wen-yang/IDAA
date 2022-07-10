@@ -18,6 +18,7 @@ Official implementation:
 
 ## Pretrain a VAE
 
+
 ```
 python train_vae.py --dim 512 --kl 0.1 --save_dir ./results/vae_cifar10_dim512_kl0.1_simclr --mode simclr --dataset cifar10
 ```
