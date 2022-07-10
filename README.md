@@ -27,12 +27,12 @@ python train_vae.py --dim 512 --kl 0.1 --save_dir ./results/vae_cifar10_dim512_k
 cd SimCLR
 ```
 
-Train a original SimCLR and evaluate it:
+SimCLR training and evaluation:
 ```
 python main.py --eps 0.1  --dataset cifar10 --resnet resnet18;
 python eval_lr.py --eps 0.1 --dataset cifar10 --resnet resnet18
 ```
-
+SimCLR+IDAA training and evaluation:
 ```
 python main.py --adv --eps 0.1  --dataset cifar10 --dim 512 --vae_path ../results/vae_cifar10_dim512_kl0.1_simclr/model_epoch292.pth --resnet resnet18;
 python eval_lr.py --adv --eps 0.1 --dataset cifar10 --dim 512 --resnet resnet18
