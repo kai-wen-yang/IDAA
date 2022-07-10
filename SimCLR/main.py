@@ -36,8 +36,8 @@ parser.add_argument('--model_path', default='log/', type=str,
 parser.add_argument('--model_dir', default='checkpoint/', type=str,
                     help='model save path')
 
-parser.add_argument('--dataset', default='CIFAR10',
-                    help='[CIFAR10, CIFAR100]')
+parser.add_argument('--dataset', default='cifar10',
+                    help='[cifar10, cifar100]')
 parser.add_argument('--gpu', default='0', type=str,
                     help='gpu device ids for CUDA_VISIBLE_DEVICES')
 parser.add_argument('--adv', default=False, action='store_true', help='adversarial exmaple')
@@ -141,7 +141,7 @@ def main():
     args.device = device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
     train_sampler = None
-    if args.dataset == "CIFAR10":
+    if args.dataset == "cifar10":
         root = "../../data"
         train_dataset = torchvision.datasets.CIFAR10(
             root, download=True, transform=TransformsSimCLR()
@@ -154,7 +154,7 @@ def main():
         ])
         testset = torchvision.datasets.CIFAR10(root='../../data', train=False, download=True, transform=transform_test)
         vae = CVAE_cifar_withbn(128, args.dim)
-    elif args.dataset == "CIFAR100":
+    elif args.dataset == "cifar100":
         root = "../../data"
         train_dataset = torchvision.datasets.CIFAR100(
             root, download=True, transform=TransformsSimCLR()
