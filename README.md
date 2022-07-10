@@ -7,3 +7,11 @@ Official implementation:
   <img src="IDAA.png" width="1000px" />
   <p>Architecture and pipeline of Identity-Disentangled Adversarial Augmentation (IDAA)</p>
 </div>
+
+## Requirements
+
+1. [Python](https://www.python.org/)
+2. [Pytorch](https://pytorch.org/)
+3. [Wandb](https://wandb.ai/site)
+4. [Torchvision](https://pytorch.org/vision/stable/index.html)
+5. [Apex(optional)](https://github.com/NVIDIA/apex)
