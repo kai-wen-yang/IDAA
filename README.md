@@ -3,12 +3,13 @@
 Official implementation:
 - Identity-Disentangled Adversarial Augmentation for Self-Supervised Learning, ICML 2022. ([Paper](https://proceedings.mlr.press/v162/yang22s/yang22s.pdf))
 
-For questions, you can contact (kwyang@mail.ustc.edu.cn).
 
 <div align="center">
   <img src="IDAA.png" width="1000px" />
   <p>Architecture and pipeline of Identity-Disentangled Adversarial Augmentation (IDAA)</p>
 </div>
+
+For questions, you can contact (kwyang@mail.ustc.edu.cn).
 
 ## Requirements
 
