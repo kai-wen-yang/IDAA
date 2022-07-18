@@ -42,6 +42,10 @@ python eval_lr.py --adv --eps 0.1 --seed 1 --gpu 0 --dataset cifar10 --dim 512 -
 ## References
 We borrow some code from https://github.com/chihhuiho/CLAE.
 
+##contact 
+
+(kwyang@mail.ustc.edu.cn).
+
 ## Citation
 
 If you find this repo useful for your research, please consider citing the paper
