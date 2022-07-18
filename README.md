@@ -3,6 +3,8 @@
 Official implementation:
 - Identity-Disentangled Adversarial Augmentation for Self-Supervised Learning, ICML 2022. ([Paper](https://proceedings.mlr.press/v162/yang22s/yang22s.pdf))
 
+For questions, you can contact (kwyang@mail.ustc.edu.cn).
+
 <div align="center">
   <img src="IDAA.png" width="1000px" />
   <p>Architecture and pipeline of Identity-Disentangled Adversarial Augmentation (IDAA)</p>
@@ -42,9 +44,6 @@ python eval_lr.py --adv --eps 0.1 --seed 1 --gpu 0 --dataset cifar10 --dim 512 -
 ## References
 We borrow some code from https://github.com/chihhuiho/CLAE.
 
-## Contact 
-
-(kwyang@mail.ustc.edu.cn).
 
 ## Citation
 
