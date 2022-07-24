@@ -50,19 +50,12 @@ We borrow some code from https://github.com/chihhuiho/CLAE.
 
 If you find this repo useful for your research, please consider citing the paper
 ```
-@InProceedings{pmlr-v162-yang22s,
-  title = 	 {Identity-Disentangled Adversarial Augmentation for Self-supervised Learning},
-  author =       {Yang, Kaiwen and Zhou, Tianyi and Tian, Xinmei and Tao, Dacheng},
-  booktitle = 	 {Proceedings of the 39th International Conference on Machine Learning},
-  pages = 	 {25364--25381},
-  year = 	 {2022},
-  editor = 	 {Chaudhuri, Kamalika and Jegelka, Stefanie and Song, Le and Szepesvari, Csaba and Niu, Gang and Sabato, Sivan},
-  volume = 	 {162},
-  series = 	 {Proceedings of Machine Learning Research},
-  month = 	 {17--23 Jul},
-  publisher =    {PMLR},
-  pdf = 	 {https://proceedings.mlr.press/v162/yang22s/yang22s.pdf},
-  url = 	 {https://proceedings.mlr.press/v162/yang22s.html},
-  abstract = 	 {Data augmentation is critical to contrastive self-supervised learning, whose goal is to distinguish a sample’s augmentations (positives) from other samples (negatives). However, strong augmentations may change the sample-identity of the positives, while weak augmentation produces easy positives/negatives leading to nearly-zero loss and ineffective learning. In this paper, we study a simple adversarial augmentation method that can modify training data to be hard positives/negatives without distorting the key information about their original identities. In particular, we decompose a sample $x$ to be its variational auto-encoder (VAE) reconstruction $G(x)$ plus the residual $R(x)=x-G(x)$, where $R(x)$ retains most identity-distinctive information due to an information-theoretic interpretation of the VAE objective. We then adversarially perturb $G(x)$ in the VAE’s bottleneck space and adds it back to the original $R(x)$ as an augmentation, which is therefore sufficiently challenging for contrastive learning and meanwhile preserves the sample identity intact. We apply this “identity-disentangled adversarial augmentation (IDAA)” to different self-supervised learning methods. On multiple benchmark datasets, IDAA consistently improves both their efficiency and generalization performance. We further show that IDAA learned on a dataset can be transferred to other datasets. Code is available at \href{https://github.com/kai-wen-yang/IDAA}{https://github.com/kai-wen-yang/IDAA}.}
+@inproceedings{yang2022identity,
+  title={Identity-Disentangled Adversarial Augmentation for Self-supervised Learning},
+  author={Yang, Kaiwen and Zhou, Tianyi and Tian, Xinmei and Tao, Dacheng},
+  booktitle={International Conference on Machine Learning},
+  pages={25364--25381},
+  year={2022},
+  organization={PMLR}
 }
 ```
